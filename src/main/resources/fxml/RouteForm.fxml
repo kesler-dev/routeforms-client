@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.routeform.RouteFormController">
+   <children>
+      <AnchorPane prefHeight="573.0" prefWidth="618.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="20.0" layoutY="23.0" text="Серия" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="23.0" />
+            <TextField fx:id="seriesTextField" layoutX="69.0" layoutY="18.0" prefHeight="26.0" prefWidth="65.0" AnchorPane.leftAnchor="69.0" AnchorPane.topAnchor="18.0" />
+            <Label layoutX="156.0" layoutY="23.0" text="Номер" />
+            <TextField fx:id="numberTextField" layoutX="211.0" layoutY="18.0" prefHeight="26.0" prefWidth="130.0" />
+            <Label layoutX="18.0" layoutY="60.0" text="Предыдущий" />
+            <Label fx:id="previousLabel" layoutX="121.0" layoutY="60.0" text="Предыдущий">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="copyFromPreviousButton" layoutX="472.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleCopyFromPreviousButtonAction" text="Скопировать" />
+            <Label layoutX="20.0" layoutY="131.0" text="Автомобиль" />
+            <TextField fx:id="autoTextField" disable="true" editable="false" layoutX="109.0" layoutY="126.0" prefHeight="26.0" prefWidth="340.0" />
+            <Label layoutX="21.0" layoutY="170.0" text="Водитель" />
+            <TextField fx:id="driverTextField" layoutX="109.0" layoutY="165.0" prefHeight="26.0" prefWidth="295.0" />
+            <Label layoutX="364.0" layoutY="23.0" text="Дата" />
+            <DatePicker fx:id="datePicker" layoutX="408.0" layoutY="18.0" prefHeight="26.0" prefWidth="163.0" />
+            <Label layoutX="20.0" layoutY="93.0" text="Статус" />
+            <Label fx:id="statusLabel" layoutX="109.0" layoutY="93.0" text="Статус">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="415.0" layoutY="165.0" mnemonicParsing="false" onAction="#handleSelectDriverButtonAction">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/book_blue_next.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label layoutX="21.0" layoutY="213.0" text="Организация" />
+            <TextField fx:id="orgTextField" layoutX="113.0" layoutY="208.0" prefHeight="26.0" prefWidth="424.0" />
+            <Label layoutX="22.0" layoutY="246.0" text="Адрес" />
+            <TextField fx:id="addressTextField" layoutX="113.0" layoutY="241.0" prefHeight="26.0" prefWidth="424.0" />
+            <Label layoutX="42.0" layoutY="320.0" text="Время" />
+            <Label layoutX="21.0" layoutY="286.0" text="Выезд">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="20.0" layoutY="430.0" text="Возвращение">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="176.0" layoutY="320.0" text="Спидометр" />
+            <TextField fx:id="departureODOTextField" layoutX="254.0" layoutY="315.0" prefHeight="26.0" prefWidth="130.0" />
+            <Label layoutX="427.0" layoutY="320.0" text="Горючее" />
+            <TextField fx:id="departureFuelTextField" layoutX="491.0" layoutY="315.0" prefHeight="26.0" prefWidth="65.0" />
+            <Label layoutX="426.0" layoutY="357.0" text="Заправка" />
+            <TextField fx:id="fuellingTextField" layoutX="491.0" layoutY="352.0" prefHeight="26.0" prefWidth="65.0" />
+            <Label layoutX="44.0" layoutY="467.0" text="Время" />
+            <Label layoutX="176.0" layoutY="467.0" text="Спидометр" />
+            <TextField fx:id="combackODOTextField" layoutX="254.0" layoutY="462.0" prefHeight="26.0" prefWidth="130.0" />
+            <Label layoutX="448.0" layoutY="436.0" />
+            <TextField fx:id="combackFuelTextField" editable="false" layoutX="491.0" layoutY="462.0" prefHeight="26.0" prefWidth="65.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="45.0" layoutY="517.0" text="Сезон" />
+            <ComboBox fx:id="seasonComboBox" disable="true" layoutX="102.0" layoutY="512.0" prefHeight="26.0" prefWidth="97.0" style="-fx-font-weight: bold;" />
+            <Label layoutX="207.0" layoutY="517.0" text="Режим" />
+            <ComboBox fx:id="modeComboBox" layoutX="255.0" layoutY="512.0" prefHeight="26.0" prefWidth="108.0" />
+            <Label layoutX="439.0" layoutY="517.0" text="Норма" />
+            <Label layoutX="42.0" layoutY="373.0" text="Простой" />
+            <TextField fx:id="idleTimeTextField" layoutX="104.0" layoutY="368.0" prefHeight="26.0" prefWidth="56.0" />
+            <Label layoutX="178.0" layoutY="373.0" text="Спец обор" />
+            <TextField fx:id="specTimeTextField" layoutX="257.0" layoutY="368.0" prefHeight="26.0" prefWidth="56.0" />
+            <Label layoutX="388.0" layoutY="558.0" text="Расход факт" />
+            <TextField fx:id="consumptionRateTextField" editable="false" layoutX="491.0" layoutY="512.0" prefHeight="27.0" prefWidth="65.0" />
+            <TextField fx:id="consumptionTextField" editable="false" layoutX="474.0" layoutY="553.0" prefHeight="26.0" prefWidth="65.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="559.0" layoutY="517.0" text="л/100км" />
+            <Label layoutX="544.0" layoutY="558.0" text="л" />
+            <Label layoutX="561.0" layoutY="320.0" text="л" />
+            <Label layoutX="561.0" layoutY="357.0" text="л" />
+            <Label layoutX="560.0" layoutY="467.0" text="л" />
+            <Label layoutX="388.0" layoutY="467.0" text="км" />
+            <Label layoutX="428.0" layoutY="467.0" text="Горючее" />
+            <TextField fx:id="departureTimeTextField" layoutX="101.0" layoutY="315.0" prefHeight="27.0" prefWidth="61.0" promptText="чч:мм" />
+            <TextField fx:id="combackTimeTextField" layoutX="101.0" layoutY="462.0" prefHeight="27.0" prefWidth="61.0" promptText="чч:мм" />
+            <Label layoutX="387.0" layoutY="320.0" text="км" />
+            <Label layoutX="321.0" layoutY="373.0" text="ч" />
+            <Label layoutX="166.0" layoutY="373.0" text="ч" />
+            <Label layoutX="206.0" layoutY="558.0" text="Пробег" />
+            <TextField fx:id="mileageTextField" editable="false" layoutX="255.0" layoutY="553.0" prefHeight="26.0" prefWidth="97.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="359.0" layoutY="558.0" text="км" />
+            <Label layoutX="42.0" layoutY="558.0" text="Время" />
+            <TextField fx:id="workTimeTextField" layoutX="101.0" layoutY="553.0" prefHeight="26.0" prefWidth="70.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <RadioButton fx:id="cardFuellingRadioButton" layoutX="445.0" layoutY="385.0" mnemonicParsing="false" text="Карт">
+               <toggleGroup>
+                  <ToggleGroup fx:id="fuellingType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="507.0" layoutY="386.0" mnemonicParsing="false" text="Нал" toggleGroup="$fuellingType" />
+            <Button layoutX="569.0" layoutY="552.0" mnemonicParsing="false" onAction="#handleRecalcButtonAction">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/arrow_refresh.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <StackPane prefHeight="41.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <ToolBar fx:id="closeButtonToolBar" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Закрыть" />
+               </items>
+               <items>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#handlePrintRouteFormButtonAction" text="Печать">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../images/printer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="okCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOkButtonAction" text="Ок" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Отмена" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="saveCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Сохранить" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelSaveButtonAction" text="Отмена" />
+                  <ProgressIndicator fx:id="saveProgressIndicator" layoutX="112.0" layoutY="161.0" prefHeight="26.0" prefWidth="29.0" visible="false" />
+               </items>
+            </ToolBar>
+
+         </children>
+      </StackPane>
+   </children>
+</VBox>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<?import org.kesler.util.fx.LocalDateTableCellFactory?>
+<?import org.kesler.mfc.routeforms.client.gui.routeform.RouteFormStateTableCellFactory?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.routeform.RouteFormsController">
+   <children>
+      <AnchorPane prefHeight="341.0" prefWidth="478.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="routeFormTableView" editable="true" layoutX="28.0" layoutY="53.0" onMouseClicked="#handleRouteFormTableViewMouseClick" prefHeight="307.0" prefWidth="815.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="53.0">
+                <placeholder>
+                    <javafx.scene.text.Text text="Нет данных" />
+                </placeholder>
+              <columns>
+                <TableColumn maxWidth="3000.0" prefWidth="75.0" text="Серия и номер">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="seriesAndNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                  <TableColumn maxWidth="2000.0" prefWidth="75.0" text="Дата">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="date" />
+                      </cellValueFactory>
+                      <cellFactory>
+                          <LocalDateTableCellFactory />
+                      </cellFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="3000.0" prefWidth="75.0" text="Водитель">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="driver" />
+                      </cellValueFactory>
+                  </TableColumn>
+                   <TableColumn maxWidth="2000.0" prefWidth="75.0" text="Пробег">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="mileage" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="2500.0" prefWidth="75.0" text="Статус">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="state" />
+                      </cellValueFactory>
+                      <cellFactory>
+                          <RouteFormStateTableCellFactory />
+                      </cellFactory>
+                  </TableColumn>
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="28.0" layoutY="22.0" text="Поиск" />
+            <TextField fx:id="searchTextField" layoutX="74.0" layoutY="17.0" />
+            <ProgressIndicator fx:id="updateProgressIndicator" layoutX="245.0" layoutY="17.0" prefHeight="26.0" prefWidth="31.0" visible="false" />
+            <Button fx:id="addButton" layoutX="28.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleAddButtonAction" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="28.0">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="editButton" layoutX="67.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleEditButtonAction" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="67.0">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/pencil.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="removeButton" layoutX="106.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleRemoveButtonAction" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="106.0">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="671.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleReportButtonAction" text="Отчет об эксплуатации" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="26.0">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/date_next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+       <StackPane prefHeight="41.0" prefWidth="310.0">
+           <children>
+               <ToolBar fx:id="closeButtonToolBar" prefHeight="40.0" prefWidth="200.0">
+                   <items>
+                       <Button mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Закрыть" />
+                   </items>
+               </ToolBar>
+               <ToolBar fx:id="okCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+                   <items>
+                       <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOkButtonAction" text="ОК" />
+                       <Button mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Отмена" />
+                   </items>
+               </ToolBar>
+           </children>
+       </StackPane>
+   </children>
+</VBox>

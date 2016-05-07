@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="219.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.employee.EmployeeController">
+   <children>
+      <AnchorPane prefHeight="79.0" prefWidth="363.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="21.0" layoutY="23.0" text="Сотрудник" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
+            <TextField fx:id="nameTextField" layoutX="121.0" layoutY="18.0" prefHeight="26.0" prefWidth="347.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="18.0" />
+            <CheckBox fx:id="adminCheckBox" layoutX="121.0" layoutY="141.0" mnemonicParsing="false" text="Админ" AnchorPane.leftAnchor="121.0" />
+            <TextField fx:id="passwordTextField" layoutX="121.0" layoutY="91.0" prefHeight="26.0" prefWidth="190.0" AnchorPane.leftAnchor="121.0" />
+            <Label layoutX="21.0" layoutY="96.0" text="Пароль" />
+            <CheckBox fx:id="activeCheckBox" layoutX="243.0" layoutY="141.0" mnemonicParsing="false" text="Действующий" AnchorPane.leftAnchor="243.0" />
+            <Label layoutX="21.0" layoutY="61.0" text="Филиал" />
+            <TextField fx:id="branchTextField" disable="true" editable="false" layoutX="121.0" layoutY="56.0" prefHeight="26.0" prefWidth="304.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="60.0" />
+            <Button layoutX="433.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleSelectBranchButtonAction">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/book_blue_next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <StackPane prefHeight="41.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <ToolBar fx:id="closeButtonToolBar" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Закрыть" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="okCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOkButtonAction" text="Ок" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Отмена" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="saveCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Сохранить" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelSaveButtonAction" text="Отмена" />
+                  <ProgressIndicator fx:id="saveProgressIndicator" layoutX="112.0" layoutY="161.0" prefHeight="26.0" prefWidth="29.0" visible="false" />
+               </items>
+            </ToolBar>
+
+         </children>
+      </StackPane>
+   </children>
+</VBox>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<update>
+    <instruction>
+		<action>MOVE</action>
+		<file>RouteForms.jar</file>
+		<destination>RouteForms.jar</destination>
+	</instruction>
+    <instruction>
+		<action>MOVE</action>
+		<file>RouteForms.exe</file>
+		<destination>RouteForms.exe</destination>
+	</instruction>
+    <instruction>
+		<action>MOVE</action>
+		<file>lib</file>
+		<destination>lib</destination>
+	</instruction>
+    <instruction>
+		<action>MOVE</action>
+		<file>docs</file>
+		<destination>docs</destination>
+	</instruction>
+</update>

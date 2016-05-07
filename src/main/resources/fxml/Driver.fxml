@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.driver.DriverController">
+   <children>
+      <AnchorPane prefHeight="177.0" prefWidth="560.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="21.0" layoutY="23.0" text="ФИО" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
+            <TextField fx:id="fioFullTextField" layoutX="79.0" layoutY="18.0" prefHeight="26.0" prefWidth="389.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="18.0" />
+            <Label layoutX="21.0" layoutY="58.0" text="ФИО сокр" />
+            <TextField fx:id="fioShortTextField" layoutX="97.0" layoutY="53.0" prefHeight="26.0" prefWidth="226.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="234.0" />
+            <TextField fx:id="driverLicenseTextField" layoutX="129.0" layoutY="91.0" prefHeight="26.0" prefWidth="194.0" />
+            <TextField fx:id="branchTextField" disable="true" editable="false" layoutX="97.0" layoutY="131.0" prefHeight="26.0" prefWidth="226.0" />
+            <Label layoutX="21.0" layoutY="96.0" text="Удостоверение" />
+            <Label layoutX="21.0" layoutY="136.0" text="Филиал" />
+            <Button layoutX="331.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleSelectBranchButtonAction">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/book_blue_next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="333.0" layoutY="58.0" text="Таб №" AnchorPane.rightAnchor="184.0" />
+            <TextField fx:id="tabelNumTextField" layoutX="384.0" layoutY="53.0" prefHeight="26.0" prefWidth="155.0" AnchorPane.rightAnchor="18.0" />
+            <CheckBox fx:id="activeCheckBox" layoutX="97.0" layoutY="177.0" mnemonicParsing="false" text="Водитель работает" />
+         </children>
+      </AnchorPane>
+      <StackPane prefHeight="41.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <ToolBar fx:id="closeButtonToolBar" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Закрыть" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="okCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOkButtonAction" text="Ок" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Отмена" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="saveCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Сохранить" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelSaveButtonAction" text="Отмена" />
+                  <ProgressIndicator fx:id="saveProgressIndicator" layoutX="112.0" layoutY="161.0" prefHeight="26.0" prefWidth="29.0" visible="false" />
+               </items>
+            </ToolBar>
+
+         </children>
+      </StackPane>
+   </children>
+</VBox>

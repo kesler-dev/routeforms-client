@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="283.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.auto.AutoController">
+   <children>
+      <AnchorPane prefHeight="177.0" prefWidth="560.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="21.0" layoutY="23.0" text="Модель" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
+            <TextField fx:id="modelTextField" layoutX="115.0" layoutY="18.0" prefHeight="26.0" prefWidth="226.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="101.0" AnchorPane.topAnchor="18.0" />
+            <Label layoutX="21.0" layoutY="58.0" text="Гос номер" />
+            <TextField fx:id="regNumTextField" layoutX="116.0" layoutY="53.0" prefHeight="26.0" prefWidth="226.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="101.0" />
+            <TextField fx:id="branchTextField" disable="true" editable="false" layoutX="116.0" layoutY="161.0" prefHeight="26.0" prefWidth="226.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="100.0" />
+            <Label layoutX="21.0" layoutY="96.0" text="Тип" />
+            <Label layoutX="21.0" layoutY="166.0" text="Филиал" />
+            <Button layoutX="350.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleSelectBranchButtonAction" AnchorPane.rightAnchor="58.0">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/book_blue_next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ComboBox fx:id="typeComboBox" layoutX="115.0" layoutY="90.0" prefHeight="26.0" prefWidth="226.0" AnchorPane.leftAnchor="115.0" />
+            <Label layoutX="21.0" layoutY="200.0" text="Норма" />
+            <TextField fx:id="normTextField" disable="true" editable="false" layoutX="116.0" layoutY="195.0" prefHeight="26.0" prefWidth="226.0" />
+            <Button layoutX="350.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleSelectNormButtonAction">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/book_blue_next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ComboBox fx:id="fuelTypeComboBox" layoutX="115.0" layoutY="125.0" prefHeight="26.0" prefWidth="136.0" />
+            <Label layoutX="21.0" layoutY="130.0" text="Топливо" />
+         </children>
+      </AnchorPane>
+      <StackPane prefHeight="41.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <ToolBar fx:id="closeButtonToolBar" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Закрыть" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="okCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOkButtonAction" text="Ок" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Отмена" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="saveCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Сохранить" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelSaveButtonAction" text="Отмена" />
+                  <ProgressIndicator fx:id="saveProgressIndicator" layoutX="112.0" layoutY="161.0" prefHeight="26.0" prefWidth="29.0" visible="false" />
+               </items>
+            </ToolBar>
+
+         </children>
+      </StackPane>
+   </children>
+</VBox>

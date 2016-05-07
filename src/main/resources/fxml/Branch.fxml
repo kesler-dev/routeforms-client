@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.branch.BranchController">
+   <children>
+      <AnchorPane prefHeight="79.0" prefWidth="363.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="21.0" layoutY="23.0" text="Филиал" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
+            <TextField fx:id="nameTextField" layoutX="79.0" layoutY="18.0" prefHeight="26.0" prefWidth="389.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="18.0" />
+            <Label layoutX="30.0" layoutY="57.0" text="Серия" />
+            <TextField fx:id="seriesTextField" layoutX="79.0" layoutY="52.0" prefHeight="26.0" prefWidth="132.0" />
+            <Label layoutX="266.0" layoutY="57.0" text="Тек номер" />
+            <TextField fx:id="curNumberTextField" layoutX="345.0" layoutY="52.0" prefHeight="26.0" prefWidth="187.0" />
+         </children>
+      </AnchorPane>
+      <StackPane prefHeight="41.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <ToolBar fx:id="closeButtonToolBar" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Закрыть" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="okCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOkButtonAction" text="Ок" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Отмена" />
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="saveCancelButtonToolBar" prefHeight="40.0" prefWidth="600.0">
+               <items>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Сохранить" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelSaveButtonAction" text="Отмена" />
+                  <ProgressIndicator fx:id="saveProgressIndicator" layoutX="112.0" layoutY="161.0" prefHeight="26.0" prefWidth="29.0" visible="false" />
+               </items>
+            </ToolBar>
+
+         </children>
+      </StackPane>
+   </children>
+</VBox>
