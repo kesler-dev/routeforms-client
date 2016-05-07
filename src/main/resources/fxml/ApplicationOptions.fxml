@@ -127,7 +127,7 @@
                   <TextField fx:id="summerToWinterDayTextField" prefHeight="27.0" prefWidth="47.0" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#handleRecalculateStatusesButtonAction" text="Пересчитать статусы" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" onAction="#handleRecalculateStatusesButtonAction" text="Пересчитать статусы" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
