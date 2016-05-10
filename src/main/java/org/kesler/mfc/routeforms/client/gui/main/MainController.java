@@ -440,16 +440,19 @@ public class MainController extends AbstractController implements Initializable{
 
         @Override
         protected Collection<RouteForm> call() throws Exception {
-            Collection<RouteForm> routeForms = new HashSet<>();
+            Collection<RouteForm> routeForms;
             LocalDate now = LocalDate.now();
             LocalDate past = now.minusDays(updateDaysCount);
+            now = null;    // не ограничиваем по будущей дате
             if (branch!=null) {
                 log.debug("Reading RouteForms for branch: " + branch + " from " + past + " till " + now);
-                routeForms = routeFormsService.findRouteFormsByBranchAndDates(branch, past, now);
+//                routeForms = routeFormsService.findRouteFormsByBranchAndDates(branch, past, now);
+                routeForms = routeFormsService.findRouteFormsByBranch(branch);
             }
             else {
                 log.debug("Reading RouteForms from "+ past + "  till " + now);
-                routeForms = routeFormsService.findRouteFormsByDates(past, now);
+//                routeForms = routeFormsService.findRouteFormsByDates(past, now);
+                routeForms = routeFormsService.findRouteForms();
             }
 
             return routeForms;

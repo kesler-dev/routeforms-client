@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <information>
     <pubDate>10.05.2016</pubDate>
-    <pkgver>2.0.0.1</pkgver>
+    <pkgver>2.0.0.2</pkgver>
     <severity>normal</severity>
     <extra>
 		<message>
-* Устранена ошибка с нумерацией путевых листов
+* Устранена ошибка с отображением будущих путевых листов
         </message>
     </extra>
 </information>
