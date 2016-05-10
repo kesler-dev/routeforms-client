@@ -81,6 +81,7 @@ public class RouteFormController extends AbstractItemController implements Initi
     protected RouteForm previousRouteForm;
     protected Auto auto;
     protected Driver driver;
+    protected boolean newRouteForm;
 
     @Autowired protected RouteFormsService routeFormsService;
     @Autowired protected DriverListController driverListController;
@@ -97,6 +98,17 @@ public class RouteFormController extends AbstractItemController implements Initi
 
     public void showAndWait(Window owner, RouteForm routeForm) {
         this.routeForm = routeForm;
+        newRouteForm = false;
+        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        auto = routeForm.getAuto();
+        driver = routeForm.getDriver();
+        Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
+        super.showAndWait(owner, "Путевой лист", icon);
+    }
+
+    public void showAndWaitNew(Window owner, RouteForm routeForm) {
+        this.routeForm = routeForm;
+        newRouteForm = true;
         this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
@@ -212,7 +224,7 @@ public class RouteFormController extends AbstractItemController implements Initi
 
     @Override
     protected void afterUpdatingContent() {
-        if (routeForm.getId() == null) {
+        if (newRouteForm) {
             setButtonSet(ButtonSet.SAVE_CANCEL);
         } else {
             setButtonSet(ButtonSet.CLOSE);
@@ -454,7 +466,7 @@ public class RouteFormController extends AbstractItemController implements Initi
 
     @Override
     protected void saveAsync() {
-        if (routeForm.getId()==null) {
+        if (newRouteForm) {
             routeForm.getAuto().getBranch().setRouteFormCounter(Integer.parseInt(routeForm.getNumber()));
             routeFormsService.saveBranch(routeForm.getAuto().getBranch());
         }

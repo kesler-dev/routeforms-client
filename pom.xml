@@ -124,7 +124,7 @@
                         </goals>
                         <configuration>
                             <headerType>gui</headerType>
-                            <outfile>target/${project.artifactId}.exe</outfile>
+                            <outfile>target/${project.build.finalName}.exe</outfile>
                             <jar>target/${project.build.finalName}.jar</jar>
                             <errTitle>${product.title}</errTitle>
                             <icon>src/main/resources/images/book_blue.ico</icon>
