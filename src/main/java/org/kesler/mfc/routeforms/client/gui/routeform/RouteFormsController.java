@@ -125,7 +125,7 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
         newRouteForm.setIntNumber(counter);
 
 
-        routeFormController.showAndWait(stage, newRouteForm);
+        routeFormController.showAndWaitNew(stage, newRouteForm);
         updateItemsAndSelect(newRouteForm);
     }
 
