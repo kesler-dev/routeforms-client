@@ -52,8 +52,8 @@ public class RouteFormsApp extends Application {
                         .showException(e);
 
             stage.hide();
-//            Platform.exit();
-//            System.exit(0);
+            Platform.exit();
+            System.exit(0);
             return;
         }
         context.registerShutdownHook();
@@ -61,6 +61,17 @@ public class RouteFormsApp extends Application {
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
+                log.debug("Main stage hide - closing app..");
+                context.close();
+                Platform.exit();
+                System.exit(0);
+            }
+        });
+
+        stage.setOnHiding(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                log.debug("Main stage hide - closing app..");
                 context.close();
                 Platform.exit();
                 System.exit(0);
