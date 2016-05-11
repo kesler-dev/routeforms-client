@@ -37,11 +37,13 @@ public interface RouteFormsService {
 
     Collection<RouteForm> findRouteForms();
     Collection<RouteForm> findRouteFormsByDates(LocalDate begDate, LocalDate endDate);
+    Collection<RouteForm> findRouteFormsByBegDate(LocalDate begDate);
     RouteForm findRouteFormById(UUID id);
     Collection<RouteForm> findRouteFormsByAuto(Auto auto);
     Collection<RouteForm> findRouteFormsByAutoAndDates(Auto auto, LocalDate begDate, LocalDate endDate);
     Collection<RouteForm> findRouteFormsByBranch(Branch branch);
     Collection<RouteForm> findRouteFormsByBranchAndDates(Branch branch, LocalDate begDate, LocalDate endDate);
+    Collection<RouteForm> findRouteFormsByBranchAndBegDate(Branch branch, LocalDate begDate);
     void saveRouteForm(RouteForm routeForm);
     void removeRouteForm(RouteForm routeForm);
 
