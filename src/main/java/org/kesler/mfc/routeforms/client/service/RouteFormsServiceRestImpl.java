@@ -253,8 +253,22 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
         URI uri = UriComponentsBuilder.fromHttpUrl(optionsHolder.getServerUrl())
                 .path("/routeforms")
                 .path("/by-dates")
-                .path("/"+begDate)
-                .path("/" + endDate)
+                .path("/" + begDate)
+                .path("-" + endDate)
+                .build().toUri();
+        log.debug("URI: " + uri);
+        RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
+        ArrayList<RouteForm> routeForms = new ArrayList<>(routeFormsArray.length);
+        Collections.addAll(routeForms, routeFormsArray);
+        return routeForms;
+    }
+
+    @Override
+    public Collection<RouteForm> findRouteFormsByBegDate(LocalDate begDate) {
+        URI uri = UriComponentsBuilder.fromHttpUrl(optionsHolder.getServerUrl())
+                .path("/routeforms")
+                .path("/by-beg-date")
+                .path("/" + begDate)
                 .build().toUri();
         log.debug("URI: " + uri);
         RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
@@ -295,8 +309,8 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
                 .path("/by-auto")
                 .path("/" + auto.getId())
                 .path("/by-dates")
-                .path("/"+begDate)
-                .path("/" + endDate)
+                .path("/" + begDate)
+                .path("-" + endDate)
                 .build().toUri();
         log.debug("URI: " + uri);
         RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
@@ -326,8 +340,24 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
                 .path("/by-branch")
                 .path("/" + branch.getId())
                 .path("/by-dates")
-                .path("/"+begDate)
-                .path("/" + endDate)
+                .path("/" + begDate)
+                .path("-" + endDate)
+                .build().toUri();
+        log.debug("URI: " + uri);
+        RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
+        ArrayList<RouteForm> routeForms = new ArrayList<>(routeFormsArray.length);
+        Collections.addAll(routeForms, routeFormsArray);
+        return routeForms;
+    }
+
+    @Override
+    public Collection<RouteForm> findRouteFormsByBranchAndBegDate(Branch branch, LocalDate begDate) {
+        URI uri = UriComponentsBuilder.fromHttpUrl(optionsHolder.getServerUrl())
+                .path("/routeforms")
+                .path("/by-branch")
+                .path("/" + branch.getId())
+                .path("/by-beg-date")
+                .path("/" + begDate)
                 .build().toUri();
         log.debug("URI: " + uri);
         RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
