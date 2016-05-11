@@ -1,6 +1,5 @@
 package org.kesler.mfc.routeforms.client.gui.main;
 
-import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
