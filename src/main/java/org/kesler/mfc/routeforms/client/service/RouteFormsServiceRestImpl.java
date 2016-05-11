@@ -254,7 +254,7 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
                 .path("/routeforms")
                 .path("/by-dates")
                 .path("/" + begDate)
-                .path("-" + endDate)
+                .path("to" + endDate)
                 .build().toUri();
         log.debug("URI: " + uri);
         RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
@@ -310,7 +310,7 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
                 .path("/" + auto.getId())
                 .path("/by-dates")
                 .path("/" + begDate)
-                .path("-" + endDate)
+                .path("to" + endDate)
                 .build().toUri();
         log.debug("URI: " + uri);
         RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
@@ -341,7 +341,7 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
                 .path("/" + branch.getId())
                 .path("/by-dates")
                 .path("/" + begDate)
-                .path("-" + endDate)
+                .path("to" + endDate)
                 .build().toUri();
         log.debug("URI: " + uri);
         RouteForm[] routeFormsArray = restTemplate.getForObject(uri, RouteForm[].class);
