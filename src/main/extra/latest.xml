@@ -5,7 +5,7 @@
     <severity>normal</severity>
     <extra>
 		<message>
-* Небольшие доработки
+* В основном окне загружаются только последние путевые листы (за 30 дней)
         </message>
     </extra>
 </information>
