@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <information>
-    <pubDate>11.05.2016</pubDate>
-    <pkgver>2.0.0.3</pkgver>
+    <pubDate>07.06.2016</pubDate>
+    <pkgver>2.0.0.4</pkgver>
     <severity>normal</severity>
     <extra>
 		<message>
-* В основном окне загружаются только последние путевые листы (за 30 дней)
+* Добавлено кол-во строк в оборотной стороне путевого листа
         </message>
     </extra>
 </information>
