@@ -149,11 +149,11 @@ public class CarRFRFExporter extends RFExporter {
 
         XSSFSheet secondSheet = wb.getSheetAt(1);
 
-        XSSFCell workTimeCell = secondSheet.getRow(22).getCell(4);
+        XSSFCell workTimeCell = secondSheet.getRow(26).getCell(4);
         Duration workTime = routeForm.getWorkTime();
         workTimeCell.setCellValue(workTime == null ? "" : Math.rint(workTime.toMinutes()/6)/10 +"");
 
-        XSSFCell mileageCell = secondSheet.getRow(24).getCell(4);
+        XSSFCell mileageCell = secondSheet.getRow(28).getCell(4);
         mileageCell.setCellValue(routeForm.getMileage()==null?"":routeForm.getMileage().toString());
 
 
