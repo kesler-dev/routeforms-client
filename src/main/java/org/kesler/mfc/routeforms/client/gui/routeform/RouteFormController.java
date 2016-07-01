@@ -82,6 +82,7 @@ public class RouteFormController extends AbstractItemController implements Initi
     protected Auto auto;
     protected Driver driver;
     protected boolean newRouteForm;
+    protected boolean lastRouteForm;
 
     @Autowired protected RouteFormsService routeFormsService;
     @Autowired protected DriverListController driverListController;
@@ -99,6 +100,7 @@ public class RouteFormController extends AbstractItemController implements Initi
     public void showAndWait(Window owner, RouteForm routeForm) {
         this.routeForm = routeForm;
         newRouteForm = false;
+        lastRouteForm = false;
         this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
@@ -109,6 +111,18 @@ public class RouteFormController extends AbstractItemController implements Initi
     public void showAndWaitNew(Window owner, RouteForm routeForm) {
         this.routeForm = routeForm;
         newRouteForm = true;
+        lastRouteForm = true;
+        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        auto = routeForm.getAuto();
+        driver = routeForm.getDriver();
+        Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
+        super.showAndWait(owner, "Путевой лист", icon);
+    }
+
+    public void showAndWaitLast(Window owner, RouteForm routeForm) {
+        this.routeForm = routeForm;
+        newRouteForm = false;
+        lastRouteForm = true;
         this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
@@ -456,7 +470,7 @@ public class RouteFormController extends AbstractItemController implements Initi
 
         // запоминаем текущий счетчик
         Integer newCurrentCount = Integer.parseInt(numberTextField.getText());
-        routeForm.getAuto().getBranch().setRouteFormCounter(newCurrentCount);
+        if (lastRouteForm) routeForm.getAuto().getBranch().setRouteFormCounter(newCurrentCount);
 
         routeForm.updateState(previousRouteForm);
 
@@ -466,7 +480,7 @@ public class RouteFormController extends AbstractItemController implements Initi
 
     @Override
     protected void saveAsync() {
-        if (newRouteForm) {
+        if (lastRouteForm) {
             routeForm.getAuto().getBranch().setRouteFormCounter(Integer.parseInt(routeForm.getNumber()));
             routeFormsService.saveBranch(routeForm.getAuto().getBranch());
         }

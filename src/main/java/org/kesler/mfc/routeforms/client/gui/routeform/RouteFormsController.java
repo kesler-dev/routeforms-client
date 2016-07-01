@@ -11,6 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Window;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
+import org.controlsfx.control.action.Action;
+import org.controlsfx.dialog.Dialog;
 import org.controlsfx.dialog.Dialogs;
 import org.kesler.mfc.routeforms.client.domain.Auto;
 import org.kesler.mfc.routeforms.client.domain.Branch;
@@ -132,7 +134,9 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
     private void editRouteForm() {
         RouteForm selectedRouteForm = routeFormTableView.getSelectionModel().getSelectedItem();
         if (selectedRouteForm != null) {
-            routeFormController.showAndWait(stage,selectedRouteForm);
+            RouteForm lastRouteForm = observableRouteForms.get(0);
+            if (selectedRouteForm.equals(lastRouteForm))
+            routeFormController.showAndWaitLast(stage, selectedRouteForm);
             updateItemsAndSelect(selectedRouteForm);
         }
 
@@ -141,8 +145,15 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
     private void removeRouteForm() {
         if (observableRouteForms.size() > 0) {
             RouteForm lastRouteForm = observableRouteForms.get(0);
-            removeItem(lastRouteForm);
-            updateItemsAndSelect(null);
+            Action response = Dialogs.create()
+                    .title("Внимание")
+                    .message("Удалить последниу путевой лист: " + lastRouteForm.getSeriesAndNumber() + "?")
+                    .actions(Dialog.ACTION_YES, Dialog.ACTION_CANCEL)
+                    .showConfirm();
+            if (response == Dialog.ACTION_YES) {
+                removeItem(lastRouteForm);
+                updateItemsAndSelect(null);
+            }
         } else {
             Notifications.create()
                     .text("Ничего нет - не удалить ничего")
