@@ -8,7 +8,7 @@
     <name>RouteFormsClient</name>
 
     <packaging>jar</packaging>
-    <version>2.0.0.4</version>
+    <version>2.0.0.5</version>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
@@ -192,7 +192,8 @@
                 <configuration>
                     <serverId>AppHost</serverId>
                     <fromDir>${project.build.directory}</fromDir>
-                    <includes>lib/*,${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*
+                    <!--<includes>lib/*,${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*-->
+                    <includes>${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*
                     </includes>
                     <url>scp://10.10.0.118</url>
                     <toDir>/srv/www/default/public_html/routeforms</toDir>
