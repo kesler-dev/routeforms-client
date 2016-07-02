@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <information>
-    <pubDate>07.06.2016</pubDate>
-    <pkgver>2.0.0.4</pkgver>
+    <pubDate>01.07.2016</pubDate>
+    <pkgver>2.0.0.5</pkgver>
     <severity>normal</severity>
     <extra>
 		<message>
-* Добавлено кол-во строк в оборотной стороне путевого листа
+* Устранена ошибка в нумерации путевых листов
         </message>
     </extra>
 </information>
