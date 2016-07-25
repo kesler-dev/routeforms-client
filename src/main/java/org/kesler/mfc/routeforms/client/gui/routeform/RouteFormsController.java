@@ -136,7 +136,9 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
         if (selectedRouteForm != null) {
             RouteForm lastRouteForm = observableRouteForms.get(0);
             if (selectedRouteForm.equals(lastRouteForm))
-            routeFormController.showAndWaitLast(stage, selectedRouteForm);
+                routeFormController.showAndWaitLast(stage, selectedRouteForm);
+            else
+                routeFormController.showAndWait(stage, selectedRouteForm);
             updateItemsAndSelect(selectedRouteForm);
         }
 
