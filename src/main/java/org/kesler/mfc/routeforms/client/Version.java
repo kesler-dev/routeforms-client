@@ -15,4 +15,5 @@ public abstract class Version {
     public static String getReleaseDate() {
         return releaseDate;
     }
+
 }

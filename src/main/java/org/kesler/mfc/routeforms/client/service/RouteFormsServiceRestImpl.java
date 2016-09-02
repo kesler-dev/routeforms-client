@@ -289,6 +289,18 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
     }
 
     @Override
+    public RouteForm findRouteFormByPreviousId(UUID id) {
+        URI uri = UriComponentsBuilder.fromHttpUrl(optionsHolder.getServerUrl())
+                .path("/routeforms")
+                .path("/previous")
+                .path("/"+id)
+                .build().toUri();
+        log.debug("URI: " + uri);
+        RouteForm routeForm = restTemplate.getForObject(uri, RouteForm.class);
+        return routeForm;
+    }
+
+    @Override
     public Collection<RouteForm> findRouteFormsByAuto(Auto auto) {
         URI uri = UriComponentsBuilder.fromHttpUrl(optionsHolder.getServerUrl())
                 .path("/routeforms")
