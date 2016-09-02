@@ -39,6 +39,7 @@ public interface RouteFormsService {
     Collection<RouteForm> findRouteFormsByDates(LocalDate begDate, LocalDate endDate);
     Collection<RouteForm> findRouteFormsByBegDate(LocalDate begDate);
     RouteForm findRouteFormById(UUID id);
+    RouteForm findRouteFormByPreviousId(UUID id);
     Collection<RouteForm> findRouteFormsByAuto(Auto auto);
     Collection<RouteForm> findRouteFormsByAutoAndDates(Auto auto, LocalDate begDate, LocalDate endDate);
     Collection<RouteForm> findRouteFormsByBranch(Branch branch);

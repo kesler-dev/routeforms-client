@@ -486,6 +486,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         }
 
         routeFormsService.saveRouteForm(routeForm);
+        if (!lastRouteForm) {
+            RouteForm nextRouteForm = routeFormsService.findRouteFormByPreviousId(routeForm.getId());
+            nextRouteForm.updateState(routeForm);
+            routeFormsService.saveRouteForm(nextRouteForm);
+        }
     }
 
     @FXML protected void handleSelectDriverButtonAction(ActionEvent ev) {
