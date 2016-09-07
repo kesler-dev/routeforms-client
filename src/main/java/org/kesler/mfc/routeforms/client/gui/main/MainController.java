@@ -371,7 +371,10 @@ public class MainController extends AbstractController implements Initializable{
     private void openRouteForm() {
         RouteForm routeForm = routeFormsTableView.getSelectionModel().getSelectedItem();
         if (routeForm != null) {
-            routeFormController.showAndWait(stage, routeForm);
+            if (routeFormsTableView.getSelectionModel().getSelectedIndex()>0)
+                routeFormController.showAndWait(stage, routeForm);
+            else
+                routeFormController.showAndWaitLast(stage, routeForm);
             updateRouteForms();
         }
     }
