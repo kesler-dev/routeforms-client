@@ -488,8 +488,10 @@ public class RouteFormController extends AbstractItemController implements Initi
         routeFormsService.saveRouteForm(routeForm);
         if (!lastRouteForm) {
             RouteForm nextRouteForm = routeFormsService.findRouteFormByPreviousId(routeForm.getId());
-            nextRouteForm.updateState(routeForm);
-            routeFormsService.saveRouteForm(nextRouteForm);
+            if (nextRouteForm!=null) {
+                nextRouteForm.updateState(routeForm);
+                routeFormsService.saveRouteForm(nextRouteForm);
+            }
         }
     }
 
