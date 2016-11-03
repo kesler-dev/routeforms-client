@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <information>
-    <pubDate>07.09.2016</pubDate>
-    <pkgver>2.0.0.8</pkgver>
+    <pubDate>03.11.2016</pubDate>
+    <pkgver>2.0.1.0</pkgver>
     <severity>normal</severity>
     <extra>
 		<message>
-* Исправлена ошибка при сохранении последнего путевого листа
+* Исправлена ошибка при определении нормы путевого листа
         </message>
     </extra>
 </information>
