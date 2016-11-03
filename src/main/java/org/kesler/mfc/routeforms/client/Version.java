@@ -5,8 +5,8 @@ package org.kesler.mfc.routeforms.client;
  */
 public abstract class Version {
 
-    private static String version = "2.0.0.8";
-    private static String releaseDate = "07.09.2016";
+    private static String version = "2.0.1.0";
+    private static String releaseDate = "03.11.2016";
 
     public static String getVersion() {
         return version;
