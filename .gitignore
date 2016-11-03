@@ -7,3 +7,4 @@ log/
 jre8/
 *.log
 out/
+.bash_profile

@@ -433,10 +433,15 @@ public class RouteFormsServiceRestImpl implements RouteFormsService {
         Integer summerToWinterMonth = options.getSummerToWinterMonth();
         Integer summerToWinterDay = options.getSummerToWinterDay();
         log.debug("WinterToSummer month: " + winterToSummerMonth);
+        log.debug("WinterToSummer day: " + winterToSummerDay);
         log.debug("SummerToWinter month: " + summerToWinterMonth);
+        log.debug("SummerToWinter day: " + summerToWinterDay);
 
         int month = date.getMonthValue();
         int day = date.getDayOfMonth();
+
+        log.debug("RouteForm month: " + month);
+        log.debug("RouteForm day: " + day);
 
         if (month > winterToSummerMonth && month < summerToWinterMonth) {
             log.debug("Return SUMMER");

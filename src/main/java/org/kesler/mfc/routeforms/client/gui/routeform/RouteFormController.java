@@ -1,5 +1,6 @@
 package org.kesler.mfc.routeforms.client.gui.routeform;
 
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
@@ -689,14 +690,19 @@ public class RouteFormController extends AbstractItemController implements Initi
             if (previousRouteForm != null &&
                     newValue != null &&
                     !newValue.isAfter(previousRouteForm.getDate())) {
-                Dialogs.create()
-                        .owner(stage)
-                        .title("Внимание")
-                        .message("Дата путевого листа не может быть ранее даты предыдущего")
-                        .showWarning();
-                datePicker.setValue(oldValue);
-
+                    Dialogs.create()
+                            .owner(stage)
+                            .title("Внимание")
+                            .message("Дата путевого листа не может быть ранее даты предыдущего")
+                            .showWarning();
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            datePicker.setValue(oldValue);
+                        }
+                    });
             }
+            seasonComboBox.setValue(routeFormsService.getSeasonForDate(newValue));
         }
     }
 
