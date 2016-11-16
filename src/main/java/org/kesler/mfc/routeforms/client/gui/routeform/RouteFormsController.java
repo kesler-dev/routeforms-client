@@ -149,7 +149,7 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
             RouteForm lastRouteForm = observableRouteForms.get(0);
             Action response = Dialogs.create()
                     .title("Внимание")
-                    .message("Удалить последниу путевой лист: " + lastRouteForm.getSeriesAndNumber() + "?")
+                    .message("Удалить последний путевой лист: " + lastRouteForm.getSeriesAndNumber() + "?")
                     .actions(Dialog.ACTION_YES, Dialog.ACTION_CANCEL)
                     .showConfirm();
             if (response == Dialog.ACTION_YES) {
@@ -198,7 +198,7 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
     protected void updatingListComplete(Collection<RouteForm> items, RouteForm item) {
         observableRouteForms.clear();
         observableRouteForms.addAll(items);
-        observableRouteForms.sort(new RouteFormsCreatedDescComparator());
+        observableRouteForms.sort(new RouteFormsDateDescComparator());
 //        observableRouteForms.sort(new RouteFormsPrevDescComparator());
 
         routeFormTableView.getSelectionModel().select(item);

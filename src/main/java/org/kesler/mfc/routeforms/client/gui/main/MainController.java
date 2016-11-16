@@ -31,7 +31,7 @@ import org.kesler.mfc.routeforms.client.gui.options.ConnectOptionsController;
 import org.kesler.mfc.routeforms.client.gui.report.BranchReportController;
 import org.kesler.mfc.routeforms.client.gui.routeform.RouteFormController;
 import org.kesler.mfc.routeforms.client.gui.routeform.RouteFormsController;
-import org.kesler.mfc.routeforms.client.gui.routeform.RouteFormsCreatedDescComparator;
+import org.kesler.mfc.routeforms.client.gui.routeform.RouteFormsDateDescComparator;
 import org.kesler.mfc.routeforms.client.gui.stat.DayStatController;
 import org.kesler.mfc.routeforms.client.security.LoginHolder;
 import org.kesler.mfc.routeforms.client.service.RouteFormsService;
@@ -99,7 +99,7 @@ public class MainController extends AbstractController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        routeFormsTableView.setItems(observableRouteForms.sorted(new RouteFormsCreatedDescComparator()));
+        routeFormsTableView.setItems(observableRouteForms.sorted(new RouteFormsDateDescComparator()));
     }
 
     @FXML
