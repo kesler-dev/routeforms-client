@@ -198,7 +198,7 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
     protected void updatingListComplete(Collection<RouteForm> items, RouteForm item) {
         observableRouteForms.clear();
         observableRouteForms.addAll(items);
-        observableRouteForms.sort(new RouteFormsCreatedDescComparator());
+        observableRouteForms.sort(new RouteFormsDateDescComparator());
 //        observableRouteForms.sort(new RouteFormsPrevDescComparator());
 
         routeFormTableView.getSelectionModel().select(item);
