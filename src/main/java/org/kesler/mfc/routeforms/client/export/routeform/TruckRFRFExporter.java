@@ -54,8 +54,8 @@ public class TruckRFRFExporter extends RFExporter {
 
 
 
-        XSSFCell orgNameCell = firstSheet.getRow(5).getCell(16);
-        orgNameCell.setCellValue(routeForm.getOrgName());
+//        XSSFCell orgNameCell = firstSheet.getRow(5).getCell(16);
+//        orgNameCell.setCellValue(routeForm.getOrgName());
 
         XSSFCell autoModelCell = firstSheet.getRow(12).getCell(16);
         autoModelCell.setCellValue(routeForm.getAuto().getModel());
