@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <information>
-    <pubDate>16.11.2016</pubDate>
-    <pkgver>2.0.1.1</pkgver>
+    <pubDate>14.04.2017</pubDate>
+    <pkgver>2.0.2.0</pkgver>
     <severity>normal</severity>
     <extra>
 		<message>
-* Исправление ошибок
+* Небольшие доработки
         </message>
     </extra>
 </information>

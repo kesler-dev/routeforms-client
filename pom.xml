@@ -8,7 +8,7 @@
     <name>RouteFormsClient</name>
 
     <packaging>jar</packaging>
-    <version>2.0.1.1</version>
+    <version>2.0.2.0</version>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
@@ -24,7 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <product.title>Учет путевых листов</product.title>
         <product.company>ГБУ СО "Многофункциональный центр"</product.company>
-        <product.year>2016</product.year>
+        <product.year>2017</product.year>
     </properties>
 
     <build>
