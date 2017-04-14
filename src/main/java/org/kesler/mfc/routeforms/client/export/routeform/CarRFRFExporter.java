@@ -52,8 +52,8 @@ public class CarRFRFExporter extends RFExporter {
         XSSFCell yearCell = firstSheet.getRow(4).getCell(48);
         yearCell.setCellValue(routeForm.getDate().getYear() - 2000);
 
-        XSSFCell orgNameCell = firstSheet.getRow(7).getCell(17);
-        orgNameCell.setCellValue(routeForm.getOrgName());
+//        XSSFCell orgNameCell = firstSheet.getRow(7).getCell(17);
+//        orgNameCell.setCellValue(routeForm.getOrgName());
 
         XSSFCell autoModelCell = firstSheet.getRow(9).getCell(21);
         autoModelCell.setCellValue(routeForm.getAuto().getModel());
