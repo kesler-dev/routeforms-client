@@ -6,36 +6,36 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.norm.NormController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="214.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kesler.mfc.routeforms.client.gui.norm.NormController">
    <children>
       <AnchorPane prefHeight="177.0" prefWidth="560.0" VBox.vgrow="ALWAYS">
          <children>
             <Label layoutX="21.0" layoutY="23.0" text="Название" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
             <TextField fx:id="nameTextField" layoutX="99.0" layoutY="18.0" prefHeight="26.0" prefWidth="441.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="18.0" />
-            <Label layoutX="106.0" layoutY="58.0" text="лето город" />
+            <Label layoutX="140.0" layoutY="58.0" text="лето" />
             <TextField fx:id="sumSitTextField" layoutX="184.0" layoutY="53.0" prefHeight="26.0" prefWidth="60.0" />
             <Label layoutX="21.0" layoutY="58.0" text="нормы:">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="333.0" layoutY="58.0" text="лето загород" />
-            <TextField fx:id="sumVilTextField" layoutX="423.0" layoutY="53.0" prefHeight="26.0" prefWidth="60.0" />
-            <Label layoutX="102.0" layoutY="97.0" text="зима город" />
+            <Label layoutX="91.0" layoutY="145.0" text="лето загород" visible="false" />
+            <TextField fx:id="sumVilTextField" layoutX="184.0" layoutY="140.0" prefHeight="26.0" prefWidth="60.0" visible="false" />
+            <Label layoutX="139.0" layoutY="97.0" text="зима" />
             <TextField fx:id="winSitTextField" layoutX="184.0" layoutY="92.0" prefHeight="26.0" prefWidth="60.0" />
-            <TextField fx:id="winVilTextField" layoutX="423.0" layoutY="92.0" prefHeight="26.0" prefWidth="60.0" />
-            <Label layoutX="332.0" layoutY="97.0" text="зима загород" />
+            <TextField fx:id="winVilTextField" layoutX="324.0" layoutY="140.0" prefHeight="26.0" prefWidth="60.0" visible="false" />
+            <Label layoutX="244.0" layoutY="146.0" text="зима загород" visible="false" />
             <Label layoutX="252.0" layoutY="58.0" text="л/100км" />
-            <Label layoutX="490.0" layoutY="58.0" text="л/100км" />
+            <Label layoutX="210.0" layoutY="137.0" text="л/100км" visible="false" />
             <Label layoutX="254.0" layoutY="97.0" text="л/100км" />
-            <Label layoutX="490.0" layoutY="97.0" text="л/100км" />
-            <TextField fx:id="idleTextField" layoutX="184.0" layoutY="140.0" prefHeight="26.0" prefWidth="60.0" />
-            <Label layoutX="91.0" layoutY="145.0" text="холостой ход" />
-            <Label layoutX="254.0" layoutY="145.0" text="л/ч" />
-            <Label layoutX="353.0" layoutY="145.0" text="спец обор" />
-            <TextField fx:id="specTextField" layoutX="423.0" layoutY="140.0" prefHeight="26.0" prefWidth="60.0" />
-            <Label layoutX="490.0" layoutY="145.0" text="л/ч" />
-            <CheckBox fx:id="noSpecSummerCheckBox" layoutX="424.0" layoutY="177.0" mnemonicParsing="false" text="не исп. летом" />
+            <Label layoutX="377.0" layoutY="154.0" text="л/100км" visible="false" />
+            <TextField fx:id="idleTextField" layoutX="423.0" layoutY="53.0" prefHeight="26.0" prefWidth="60.0" />
+            <Label layoutX="333.0" layoutY="58.0" text="холостой ход" />
+            <Label layoutX="490.0" layoutY="58.0" text="л/ч" />
+            <Label layoutX="344.0" layoutY="97.0" text="спец обор" />
+            <TextField fx:id="specTextField" layoutX="423.0" layoutY="92.0" prefHeight="26.0" prefWidth="60.0" />
+            <Label layoutX="490.0" layoutY="97.0" text="л/ч" />
+            <CheckBox fx:id="noSpecSummerCheckBox" layoutX="427.0" layoutY="131.0" mnemonicParsing="false" text="не исп. летом" />
          </children>
       </AnchorPane>
       <StackPane prefHeight="41.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
