@@ -85,8 +85,8 @@ public class RouteFormsApp extends Application {
                 800, 650
         );
 
-        AppUpdater appUpdater = new AppUpdater(stage);
-        appUpdater.checkForUpdates();
+//        AppUpdater appUpdater = new AppUpdater(stage);
+//        appUpdater.checkForUpdates();
     }
 
     Throwable getCause(Throwable e) {
