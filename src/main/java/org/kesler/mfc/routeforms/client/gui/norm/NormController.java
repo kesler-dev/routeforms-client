@@ -72,9 +72,9 @@ public class NormController extends AbstractItemController implements Initializa
 
         validationSupport.registerValidator(nameTextField, false, Validator.createEmptyValidator("Наименование не должно быть пустым"));
         validationSupport.registerValidator(sumSitTextField, false, Validator.createEmptyValidator("Введите значение"));
-        validationSupport.registerValidator(sumVilTextField, false, Validator.createEmptyValidator("Введите значение"));
+//        validationSupport.registerValidator(sumVilTextField, false, Validator.createEmptyValidator("Введите значение"));
         validationSupport.registerValidator(winSitTextField, false, Validator.createEmptyValidator("Введите значение"));
-        validationSupport.registerValidator(winVilTextField, false, Validator.createEmptyValidator("Введите значение"));
+//        validationSupport.registerValidator(winVilTextField, false, Validator.createEmptyValidator("Введите значение"));
         validationSupport.registerValidator(idleTextField, false, Validator.createEmptyValidator("Введите значение"));
 
     }

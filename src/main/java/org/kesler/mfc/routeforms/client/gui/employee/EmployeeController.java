@@ -45,6 +45,7 @@ public class EmployeeController extends AbstractItemController implements Initia
     public void initialize(URL location, ResourceBundle resources) {
         nameTextField.textProperty().addListener(invalidationListener);
         passwordTextField.textProperty().addListener(invalidationListener);
+        branchTextField.textProperty().addListener(invalidationListener);
         adminCheckBox.selectedProperty().addListener(invalidationListener);
         activeCheckBox.selectedProperty().addListener(invalidationListener);
     }

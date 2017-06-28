@@ -102,7 +102,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         this.routeForm = routeForm;
         newRouteForm = false;
         lastRouteForm = false;
-        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        if (routeForm.getPreviousRouteFormID() != null) {
+            this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        } else {
+            this.previousRouteForm = null;
+        }
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
@@ -113,7 +117,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         this.routeForm = routeForm;
         newRouteForm = true;
         lastRouteForm = true;
-        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        if (routeForm.getPreviousRouteFormID() != null) {
+            this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        } else {
+            this.previousRouteForm = null;
+        }
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
@@ -124,7 +132,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         this.routeForm = routeForm;
         newRouteForm = false;
         lastRouteForm = true;
-        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        if (routeForm.getPreviousRouteFormID() != null) {
+            this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        } else {
+            this.previousRouteForm = null;
+        }
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));

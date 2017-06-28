@@ -240,16 +240,30 @@ public class MainController extends AbstractController implements Initializable{
             branch = loginHolder.getCurrentEmployee().getBranch();
         }
 
-        if (branch != null) {
-            autoListController.showAndWaitSelect(stage, branch);
-            if (autoListController.getResult() == Result.OK) {
-                auto = autoListController.getSelectedItem();
-            }
+        if (branch == null) {
+            Dialogs.create()
+                    .owner(stage)
+                    .title("Внимание")
+                    .message("Для сотрудника не задан цех.")
+                    .showWarning();
+            return;
         }
+
+        autoListController.showAndWaitSelect(stage, branch);
+        if (autoListController.getResult() == Result.OK) {
+            auto = autoListController.getSelectedItem();
+        }
+
 
         if (auto != null) {
             routeFormsController.showAndWait(stage, auto);
             updateRouteForms();
+        } else {
+            Dialogs.create()
+                    .owner(stage)
+                    .title("Внимание")
+                    .message("Автомобиль не выбран.")
+                    .showWarning();
         }
 
     }
@@ -294,7 +308,6 @@ public class MainController extends AbstractController implements Initializable{
     @Override
     protected void updateContent() {
         updateSecurity();
-        updateControls();
     }
 
     private void updateSecurity() {
@@ -332,11 +345,11 @@ public class MainController extends AbstractController implements Initializable{
                 normsMenuItem.setDisable(false);
                 applicationOptionsMenuItem.setDisable(false);
             }
-
         }
 
-        updateRouteForms();
+        updateControls();
 
+        updateRouteForms();
 
     }
 
