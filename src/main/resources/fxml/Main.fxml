@@ -77,7 +77,7 @@
                           </ImageView>
                       </graphic>
                   </MenuItem>
-                  <MenuItem fx:id="branchesMenuItem" mnemonicParsing="false" onAction="#handleBranchesMenuItem" text="Филиалы">
+                  <MenuItem fx:id="branchesMenuItem" mnemonicParsing="false" onAction="#handleBranchesMenuItem" text="Цеха">
                       <graphic>
                           <ImageView>
                               <image>
@@ -209,7 +209,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Label layoutX="34.0" layoutY="14.0" text="Филиал:" />
+            <Label layoutX="34.0" layoutY="14.0" text="Цех:" />
             <Label fx:id="branchLabel" layoutX="93.0" layoutY="14.0" prefHeight="17.0" prefWidth="348.0" text="Label" textFill="#4c1ef2" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="297.0">
                <font>
                   <Font name="System Bold" size="13.0" />

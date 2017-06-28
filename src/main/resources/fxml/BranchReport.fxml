@@ -9,7 +9,7 @@
    <children>
       <AnchorPane prefHeight="625.0" prefWidth="468.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="21.0" layoutY="23.0" text="Филиал:" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
+            <Label layoutX="21.0" layoutY="23.0" text="Цех:" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="23.0" />
             <Label fx:id="branchLabel" layoutX="88.0" layoutY="23.0" style="-fx-font-weight: bold;" text="branch" />
             <Label layoutX="21.0" layoutY="58.0" text="Автомобиль:" />
             <Label fx:id="autoLabel" layoutX="114.0" layoutY="58.0" style="-fx-font-weight: bold;" text="auto" />

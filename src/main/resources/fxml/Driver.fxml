@@ -16,7 +16,7 @@
             <TextField fx:id="driverLicenseTextField" layoutX="129.0" layoutY="91.0" prefHeight="26.0" prefWidth="194.0" />
             <TextField fx:id="branchTextField" disable="true" editable="false" layoutX="97.0" layoutY="131.0" prefHeight="26.0" prefWidth="226.0" />
             <Label layoutX="21.0" layoutY="96.0" text="Удостоверение" />
-            <Label layoutX="21.0" layoutY="136.0" text="Филиал" />
+            <Label layoutX="21.0" layoutY="136.0" text="Цех" />
             <Button layoutX="331.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleSelectBranchButtonAction">
                <graphic>
                   <ImageView>

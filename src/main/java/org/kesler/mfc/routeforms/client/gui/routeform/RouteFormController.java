@@ -102,7 +102,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         this.routeForm = routeForm;
         newRouteForm = false;
         lastRouteForm = false;
-        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        if (routeForm.getPreviousRouteFormID() != null) {
+            this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        } else {
+            this.previousRouteForm = null;
+        }
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
@@ -113,7 +117,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         this.routeForm = routeForm;
         newRouteForm = true;
         lastRouteForm = true;
-        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        if (routeForm.getPreviousRouteFormID() != null) {
+            this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        } else {
+            this.previousRouteForm = null;
+        }
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
@@ -124,7 +132,11 @@ public class RouteFormController extends AbstractItemController implements Initi
         this.routeForm = routeForm;
         newRouteForm = false;
         lastRouteForm = true;
-        this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        if (routeForm.getPreviousRouteFormID() != null) {
+            this.previousRouteForm = routeFormsService.findRouteFormById(routeForm.getPreviousRouteFormID());
+        } else {
+            this.previousRouteForm = null;
+        }
         auto = routeForm.getAuto();
         driver = routeForm.getDriver();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/form_green.png"));
@@ -212,7 +224,7 @@ public class RouteFormController extends AbstractItemController implements Initi
         combackODOTextField.setText(routeForm.getCombackODO() == null ? "" : routeForm.getCombackODO().toString());
         combackFuelTextField.setText(routeForm.getCombackFuel() == null ? "" : routeForm.getCombackFuel().toString());
         seasonComboBox.setValue(routeForm.getSeasonType());
-        modeComboBox.setValue(routeForm.getModeType());
+//        modeComboBox.setValue(routeForm.getModeType());
         idleTimeTextField.setText(routeForm.getIdleTime() == null ? "" : routeForm.getIdleTime().toString());
         String specTimeString = routeForm.getSpecTime() == null ? "" : routeForm.getSpecTime().toString();
         boolean noSpecSummer = routeForm.getAuto().getNorm().isNoSpecSummer()==null?true:routeForm.getAuto().getNorm().isNoSpecSummer();
@@ -235,6 +247,9 @@ public class RouteFormController extends AbstractItemController implements Initi
 //        recalculateFuel();
 //        recalculateTime();
         setGuiListeners();
+        // для автоматического расчета нормы
+        modeComboBox.setValue(routeForm.getModeType());
+
     }
 
     @Override

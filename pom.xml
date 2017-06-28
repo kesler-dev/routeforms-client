@@ -8,7 +8,7 @@
     <name>RouteFormsClient</name>
 
     <packaging>jar</packaging>
-    <version>2.0.2.0</version>
+    <version>2.2.0.0</version>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
@@ -23,7 +23,7 @@
         <log4j.version>1.2.16</log4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <product.title>Учет путевых листов</product.title>
-        <product.company>ГБУ СО "Многофункциональный центр"</product.company>
+        <product.company>Алексей Кутырев</product.company>
         <product.year>2017</product.year>
     </properties>
 
@@ -130,7 +130,7 @@
                             <icon>src/main/resources/images/book_blue.ico</icon>
                             <cmdLine>./</cmdLine>
                             <splash>
-                                <file>src/main/resources/images/mfc.bmp</file>
+                                <file>src/main/resources/images/book_blue.bmp</file>
                                 <waitForWindow>true</waitForWindow>
                                 <timeout>20</timeout>
                             </splash>
@@ -190,14 +190,14 @@
                 <artifactId>wagon-maven-plugin</artifactId>
                 <version>1.0-beta-5</version>
                 <configuration>
-                    <serverId>AppHost</serverId>
+                    <serverId>Router</serverId>
                     <fromDir>${project.build.directory}</fromDir>
-                    <!--<includes>lib/*,${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*-->
-                    <includes>${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*
+                    <includes>lib/*,${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*
+                    <!--<includes>${project.build.finalName}.jar,${project.build.finalName}.exe,latest.xml,files.xml,update.xml,docs/*-->
                     </includes>
-                    <url>scp://10.10.0.118</url>
-                    <toDir>/srv/www/default/public_html/routeforms</toDir>
-                    <optimize>true</optimize>
+                    <url>scp://10.10.7.251:22222</url>
+                    <toDir>/opt/share/www/app/routeforms</toDir>
+                    <!--<optimize>true</optimize>-->
                 </configuration>
                 <executions>
                     <execution>

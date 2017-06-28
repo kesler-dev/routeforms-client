@@ -71,8 +71,8 @@
             </TextField>
             <Label layoutX="45.0" layoutY="517.0" text="Сезон" />
             <ComboBox fx:id="seasonComboBox" disable="true" layoutX="102.0" layoutY="512.0" prefHeight="26.0" prefWidth="97.0" style="-fx-font-weight: bold;" />
-            <Label layoutX="207.0" layoutY="517.0" text="Режим" />
-            <ComboBox fx:id="modeComboBox" layoutX="255.0" layoutY="512.0" prefHeight="26.0" prefWidth="108.0" />
+            <Label layoutX="207.0" layoutY="517.0" text="Режим" visible="false" />
+            <ComboBox fx:id="modeComboBox" layoutX="255.0" layoutY="512.0" prefHeight="26.0" prefWidth="108.0" visible="false" />
             <Label layoutX="439.0" layoutY="517.0" text="Норма" />
             <Label layoutX="42.0" layoutY="373.0" text="Простой" />
             <TextField fx:id="idleTimeTextField" layoutX="104.0" layoutY="368.0" prefHeight="26.0" prefWidth="56.0" />

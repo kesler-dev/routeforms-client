@@ -51,14 +51,14 @@ public class BranchListController extends AbstractListController<Branch> {
     @Override
     public void show(Window owner) {
         log.info("Show dialog");
-        String title = "Филиалы";
+        String title = "Цеха";
         Image icon = new Image(this.getClass().getResourceAsStream("/images/office-building.png"));
         super.show(owner, title, icon);
     }
 
     @Override
     public void showAndWait(Window owner) {
-        String title = "Филиалы";
+        String title = "Цеха";
         Image icon = new Image(this.getClass().getResourceAsStream("/images/office-building.png"));
         super.showAndWait(owner, title, icon);
     }
@@ -66,7 +66,7 @@ public class BranchListController extends AbstractListController<Branch> {
     @Override
     public void showAndWaitSelect(Window owner) {
         log.info("Show select dialog");
-        String title = "Выберите филиал";
+        String title = "Выберите цех";
         Image icon = new Image(this.getClass().getResourceAsStream("/images/office-building.png"));
         super.showAndWaitSelect(owner, title, icon);
     }
