@@ -225,10 +225,10 @@
                </graphic>
             </Button>
             <ProgressIndicator fx:id="updateProgressIndicator" layoutX="490.0" layoutY="8.0" prefHeight="26.0" prefWidth="34.0" visible="false" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="8.0" />
-            <Label layoutX="486.0" layoutY="14.0" text="Сегодня:" AnchorPane.rightAnchor="194.0" />
-            <Label fx:id="currentDateLabel" layoutX="551.0" layoutY="14.0" prefHeight="17.0" prefWidth="84.0" text="Label" textFill="#0e9a04" AnchorPane.rightAnchor="103.0">
+            <Label layoutX="473.0" layoutY="14.0" text="Сегодня:" AnchorPane.rightAnchor="207.0" />
+            <Label fx:id="currentDateLabel" layoutX="537.0" layoutY="12.0" prefHeight="19.0" prefWidth="117.0" text="Label" textFill="#0a6b03" AnchorPane.rightAnchor="84.0">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
          </children>
