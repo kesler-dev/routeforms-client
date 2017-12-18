@@ -74,6 +74,9 @@ public class TruckRFRFExporter extends RFExporter {
         XSSFCell driverLicenseCell = firstSheet.getRow(16).getCell(15);
         driverLicenseCell.setCellValue(routeForm.getDriver()==null?"":routeForm.getDriver().getDriverLicense());
 
+        XSSFCell driverCategoryCell = firstSheet.getRow(16).getCell(44);
+        driverCategoryCell.setCellValue(routeForm.getDriver()==null?"":routeForm.getDriver().getDriverCategory());
+
         XSSFCell taskAddressCell = firstSheet.getRow(36).getCell(0);
         taskAddressCell.setCellValue(routeForm.getAddress());
 

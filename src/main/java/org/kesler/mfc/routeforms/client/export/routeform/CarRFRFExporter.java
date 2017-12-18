@@ -67,6 +67,9 @@ public class CarRFRFExporter extends RFExporter {
         XSSFCell driverLicenseCell = firstSheet.getRow(13).getCell(17);
         driverLicenseCell.setCellValue(routeForm.getDriver()==null?"":routeForm.getDriver().getDriverLicense());
 
+        XSSFCell driverCategoryCell = firstSheet.getRow(13).getCell(66);
+        driverCategoryCell.setCellValue(routeForm.getDriver()==null?"":routeForm.getDriver().getDriverCategory());
+
         XSSFCell departureODOCell = firstSheet.getRow(18).getCell(72);
         departureODOCell.setCellValue(routeForm.getDepartureODO()==null?"":routeForm.getDepartureODO().toString());
 
