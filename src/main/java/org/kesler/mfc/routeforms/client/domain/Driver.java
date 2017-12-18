@@ -9,6 +9,7 @@ public class Driver extends AbstractEntity {
     protected String fioFull;
     protected String fioShort;
     protected String driverLicense;
+    protected String driverCategory;
     protected String tabelNum;
     protected Branch branch;
     protected Boolean active = true;
@@ -22,6 +23,9 @@ public class Driver extends AbstractEntity {
 
     public String getDriverLicense() { return driverLicense; }
     public void setDriverLicense(String driverLicense) { this.driverLicense = driverLicense; }
+
+    public String getDriverCategory() { return driverCategory; }
+    public void setDriverCategory(String driverCategory) { this.driverCategory = driverCategory; }
 
     public String getTabelNum() { return tabelNum; }
     public void setTabelNum(String tabelNum) { this.tabelNum = tabelNum; }

@@ -33,6 +33,7 @@ public class DriverController extends AbstractItemController implements Initiali
     @FXML protected TextField fioFullTextField;
     @FXML protected TextField fioShortTextField;
     @FXML protected TextField driverLicenseTextField;
+    @FXML protected TextField driverCategoryTextField;
     @FXML protected TextField tabelNumTextField;
     @FXML protected TextField branchTextField;
     @FXML protected CheckBox activeCheckBox;
@@ -46,6 +47,7 @@ public class DriverController extends AbstractItemController implements Initiali
         fioFullTextField.textProperty().addListener(invalidationListener);
         fioShortTextField.textProperty().addListener(invalidationListener);
         driverLicenseTextField.textProperty().addListener(invalidationListener);
+        driverCategoryTextField.textProperty().addListener(invalidationListener);
         tabelNumTextField.textProperty().addListener(invalidationListener);
         branchTextField.textProperty().addListener(invalidationListener);
         activeCheckBox.selectedProperty().addListener(invalidationListener);
@@ -74,6 +76,7 @@ public class DriverController extends AbstractItemController implements Initiali
         fioFullTextField.setText(driver.getFioFull());
         fioShortTextField.setText(driver.getFioShort());
         driverLicenseTextField.setText(driver.getDriverLicense());
+        driverCategoryTextField.setText(driver.getDriverCategory());
         tabelNumTextField.setText(driver.getTabelNum());
         branch = driver.getBranch();
         branchTextField.setText(branch==null?"":branch.toString());
@@ -85,6 +88,7 @@ public class DriverController extends AbstractItemController implements Initiali
         driver.setFioFull(fioFullTextField.getText());
         driver.setFioShort(fioShortTextField.getText());
         driver.setDriverLicense(driverLicenseTextField.getText());
+        driver.setDriverCategory(driverCategoryTextField.getText());
         driver.setTabelNum(tabelNumTextField.getText());
         driver.setBranch(branch);
         driver.setActive(activeCheckBox.isSelected());
