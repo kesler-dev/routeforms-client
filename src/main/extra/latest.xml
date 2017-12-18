@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <information>
-    <pubDate>14.04.2017</pubDate>
-    <pkgver>2.0.2.0</pkgver>
+    <pubDate>17.12.2017</pubDate>
+    <pkgver>2.2.1.0</pkgver>
     <severity>normal</severity>
     <extra>
 		<message>
-* Небольшие доработки
+* Добавлена категория водителя
         </message>
     </extra>
 </information>
