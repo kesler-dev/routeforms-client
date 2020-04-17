@@ -1,6 +1,5 @@
 target/
 .DS_Store
-*.xlsx
 *.iml
 .idea/
 log/
