@@ -71,16 +71,6 @@ public class BranchReportService {
             log.debug("--combackFuel: " + routeForm.getCombackFuel());
             mileage = routeForm.getMileage()==null?0:routeForm.getMileage();
             branchReport.totalOdo += mileage;
-            switch (routeForm.getModeType()) {
-                case SITY:
-                    branchReport.sityOdo += mileage;
-                    log.debug("--sity mileage: " + mileage);
-                    break;
-                case VILAGE:
-                    branchReport.vilOdo += mileage;
-                    log.debug("--village mileage: " + mileage);
-                    break;
-            }
             branchReport.idleTime += routeForm.getIdleTime()==null?0:routeForm.getIdleTime();
             branchReport.specTime += routeForm.getSpecTime()==null?0:routeForm.getSpecTime();
 

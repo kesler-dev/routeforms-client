@@ -80,12 +80,6 @@ public class BranchReportExporter extends Exporter {
         XSSFCell totalOdoCell = firstSheet.getRow(15).getCell(2);
         totalOdoCell.setCellValue(branchReport.totalOdo);
 
-        XSSFCell sityOdoCell = firstSheet.getRow(16).getCell(2);
-        sityOdoCell.setCellValue(branchReport.sityOdo);
-
-        XSSFCell vilOdoCell = firstSheet.getRow(17).getCell(2);
-        vilOdoCell.setCellValue(branchReport.vilOdo);
-
         XSSFCell idleTimeCell = firstSheet.getRow(18).getCell(2);
         idleTimeCell.setCellValue(branchReport.idleTime);
 

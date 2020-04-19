@@ -32,8 +32,6 @@ public class BranchReport {
     public long endOdo;
 
     public long totalOdo;
-    public long sityOdo;
-    public long vilOdo;
     public double idleTime;
     public double specTime;
 

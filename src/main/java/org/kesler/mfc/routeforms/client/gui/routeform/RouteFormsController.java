@@ -14,7 +14,10 @@ import org.controlsfx.control.Notifications;
 import org.controlsfx.control.action.Action;
 import org.controlsfx.dialog.Dialog;
 import org.controlsfx.dialog.Dialogs;
-import org.kesler.mfc.routeforms.client.domain.*;
+import org.kesler.mfc.routeforms.client.domain.Auto;
+import org.kesler.mfc.routeforms.client.domain.Branch;
+import org.kesler.mfc.routeforms.client.domain.Driver;
+import org.kesler.mfc.routeforms.client.domain.RouteForm;
 import org.kesler.mfc.routeforms.client.gui.AbstractListController;
 import org.kesler.mfc.routeforms.client.gui.driver.DriverListController;
 import org.kesler.mfc.routeforms.client.gui.report.BranchReportController;
@@ -117,7 +120,6 @@ public class RouteFormsController extends AbstractListController<RouteForm> impl
         newRouteForm.setSeasonType(routeFormsService.getSeasonForDate(newRouteForm.getDate()));
         newRouteForm.setOrgName(optionsHolder.getOptions().getOrgName());
         // Режим для всех П/Л - город
-        newRouteForm.setModeType(Norm.ModeType.SITY);
 
         Integer counter = auto.getBranch().getRouteFormCounter();
         if (counter==null) counter=0;

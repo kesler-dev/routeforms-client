@@ -35,10 +35,8 @@ public class NormController extends AbstractItemController implements Initializa
     @Autowired protected BranchListController branchListController;
 
     @FXML protected TextField nameTextField;
-    @FXML protected TextField sumSitTextField;
-    @FXML protected TextField sumVilTextField;
-    @FXML protected TextField winSitTextField;
-    @FXML protected TextField winVilTextField;
+    @FXML protected TextField sumConsumptionRateTextField;
+    @FXML protected TextField winConsumptionRateTextField;
     @FXML protected TextField idleTextField;
     @FXML protected TextField specTextField;
     @FXML protected CheckBox noSpecSummerCheckBox;
@@ -52,10 +50,8 @@ public class NormController extends AbstractItemController implements Initializa
 
         nameTextField.textProperty().addListener(invalidationListener);
 
-        sumSitTextField.textProperty().addListener(invalidationListener);
-        sumVilTextField.textProperty().addListener(invalidationListener);
-        winSitTextField.textProperty().addListener(invalidationListener);
-        winVilTextField.textProperty().addListener(invalidationListener);
+        sumConsumptionRateTextField.textProperty().addListener(invalidationListener);
+        winConsumptionRateTextField.textProperty().addListener(invalidationListener);
         idleTextField.textProperty().addListener(invalidationListener);
         specTextField.textProperty().addListener(invalidationListener);
         noSpecSummerCheckBox.selectedProperty().addListener(invalidationListener);
@@ -63,18 +59,14 @@ public class NormController extends AbstractItemController implements Initializa
 
         DecimalTextFieldChangeListener decimalTextFieldChangeListener = new DecimalTextFieldChangeListener();
 
-        sumSitTextField.textProperty().addListener(decimalTextFieldChangeListener);
-        sumVilTextField.textProperty().addListener(decimalTextFieldChangeListener);
-        winSitTextField.textProperty().addListener(decimalTextFieldChangeListener);
-        winVilTextField.textProperty().addListener(decimalTextFieldChangeListener);
+        sumConsumptionRateTextField.textProperty().addListener(decimalTextFieldChangeListener);
+        winConsumptionRateTextField.textProperty().addListener(decimalTextFieldChangeListener);
         idleTextField.textProperty().addListener(decimalTextFieldChangeListener);
         specTextField.textProperty().addListener(decimalTextFieldChangeListener);
 
         validationSupport.registerValidator(nameTextField, false, Validator.createEmptyValidator("Наименование не должно быть пустым"));
-        validationSupport.registerValidator(sumSitTextField, false, Validator.createEmptyValidator("Введите значение"));
-//        validationSupport.registerValidator(sumVilTextField, false, Validator.createEmptyValidator("Введите значение"));
-        validationSupport.registerValidator(winSitTextField, false, Validator.createEmptyValidator("Введите значение"));
-//        validationSupport.registerValidator(winVilTextField, false, Validator.createEmptyValidator("Введите значение"));
+        validationSupport.registerValidator(sumConsumptionRateTextField, false, Validator.createEmptyValidator("Введите значение"));
+        validationSupport.registerValidator(winConsumptionRateTextField, false, Validator.createEmptyValidator("Введите значение"));
         validationSupport.registerValidator(idleTextField, false, Validator.createEmptyValidator("Введите значение"));
 
     }
@@ -101,10 +93,8 @@ public class NormController extends AbstractItemController implements Initializa
     protected void updateContent() {
         nameTextField.setText(norm.getName());
 
-        sumSitTextField.setText(norm.getSumSitConsumptionRate() + "");
-        sumVilTextField.setText(norm.getSumVilConsumptionRate() + "");
-        winSitTextField.setText(norm.getWinSitConsumptionRate() + "");
-        winVilTextField.setText(norm.getWinVilConsumptionRate() + "");
+        sumConsumptionRateTextField.setText(norm.getSumConsumptionRate() + "");
+        winConsumptionRateTextField.setText(norm.getWinConsumptionRate() + "");
         idleTextField.setText(norm.getIdleConsumptionRate() + "");
         specTextField.setText(norm.getSpecConsumptionRate() + "");
         noSpecSummerCheckBox.setSelected(norm.isNoSpecSummer()==null?true:norm.isNoSpecSummer());
@@ -115,41 +105,23 @@ public class NormController extends AbstractItemController implements Initializa
     protected void updateResult() {
         norm.setName(nameTextField.getText());
 
-        String sumSitString = sumSitTextField.getText();
-        Double sumSit = null;
+        String sumString = sumConsumptionRateTextField.getText();
+        Double sum = null;
         try {
-            if (sumSitString!=null&&!sumSitString.isEmpty()) sumSit = Double.parseDouble(sumSitString);
+            if (sumString!=null&&!sumString.isEmpty()) sum = Double.parseDouble(sumString);
         } catch (NumberFormatException e) {
             log.error("Error parsing SumSitConsumption: " + e.getMessage());
         }
-        norm.setSumSitConsumptionRate(sumSit);
+        norm.setSumConsumptionRate(sum);
 
-        String sumVilString = sumVilTextField.getText();
-        Double sumVil = null;
+        String winString = winConsumptionRateTextField.getText();
+        Double win = null;
         try {
-            if (sumVilString!=null && !sumVilString.isEmpty()) sumVil = Double.parseDouble(sumVilString);
-        } catch (NumberFormatException e) {
-            log.error("Error parsing SumVilConsumption: " + e.getMessage());
-        }
-        norm.setSumVilConsumptionRate(sumVil);
-        
-        String winSitString = winSitTextField.getText();
-        Double winSit = null;
-        try {
-            if (winSitString!=null && !winSitString.isEmpty()) winSit = Double.parseDouble(winSitString);
+            if (winString!=null && !winString.isEmpty()) win = Double.parseDouble(winString);
         } catch (NumberFormatException e) {
             log.error("Error parsing WinSitConsumption: " + e.getMessage());
         }
-        norm.setWinSitConsumptionRate(winSit);
-
-        String winVilString = winVilTextField.getText();
-        Double winVil = null;
-        try {
-            if (winVilString!=null && !winVilString.isEmpty()) winVil = Double.parseDouble(winVilString);
-        } catch (NumberFormatException e) {
-            log.error("Error parsing WinVilConsumption: " + e.getMessage());
-        }
-        norm.setWinVilConsumptionRate(winVil);
+        norm.setWinConsumptionRate(win);
 
         String idleString = idleTextField.getText();
         Double idle = null;

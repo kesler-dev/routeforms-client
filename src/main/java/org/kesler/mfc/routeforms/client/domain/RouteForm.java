@@ -60,7 +60,6 @@ public class RouteForm extends AbstractEntity {
     protected Double specTime;
     protected Duration workTime;
     protected Norm.SeasonType seasonType;
-    protected Norm.ModeType modeType;
     protected Double consumptionRate;
     protected Double consumption;
     protected State state;
@@ -147,9 +146,6 @@ public class RouteForm extends AbstractEntity {
     public Norm.SeasonType getSeasonType() { return seasonType; }
     public void setSeasonType(Norm.SeasonType seasonType) { this.seasonType = seasonType; }
 
-    public Norm.ModeType getModeType() { return modeType; }
-    public void setModeType(Norm.ModeType modeType) { this.modeType = modeType; }
-
     public Employee getEmployee() { return employee; }
     public void setEmployee(Employee employee) { this.employee = employee; }
 
@@ -170,7 +166,6 @@ public class RouteForm extends AbstractEntity {
         if (combackODO==null) {state = State.UNREADY; return;}
         if (combackFuel==null || combackFuel <= 0.0) {state = State.UNREADY; return;}
         if (seasonType==null) {state = State.UNREADY; return;}
-        if (modeType==null) {state = State.UNREADY; return;}
 
         state = State.READY;
     }

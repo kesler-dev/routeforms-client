@@ -48,8 +48,6 @@ public class BranchReportController extends AbstractController implements Initia
 
     @FXML protected TextField odoBeginTextField;
     @FXML protected TextField odoTotalTextField;
-    @FXML protected TextField odoSityTextField;
-    @FXML protected TextField odoVilTextField;
     @FXML protected TextField idleTimeTextField;
     @FXML protected TextField specTimeTextField;
     @FXML protected TextField odoEndTextField;
@@ -178,8 +176,6 @@ public class BranchReportController extends AbstractController implements Initia
     private void updateCalculatedContent() {
         odoBeginTextField.setText(branchReport.beginOdo+"");
         odoTotalTextField.setText(branchReport.totalOdo+"");
-        odoSityTextField.setText(branchReport.sityOdo+"");
-        odoVilTextField.setText(branchReport.vilOdo+"");
         odoEndTextField.setText(branchReport.endOdo+"");
         idleTimeTextField.setText(branchReport.idleTime+"");
         specTimeTextField.setText(branchReport.specTime+"");
@@ -199,8 +195,6 @@ public class BranchReportController extends AbstractController implements Initia
 
         odoBeginTextField.setText("");
         odoTotalTextField.setText("");
-        odoSityTextField.setText("");
-        odoVilTextField.setText("");
         odoEndTextField.setText("");
         idleTimeTextField.setText("");
         specTimeTextField.setText("");

@@ -68,7 +68,6 @@ public class RouteFormController extends AbstractItemController implements Initi
     @FXML protected TextField combackODOTextField;
     @FXML protected TextField combackFuelTextField;
     @FXML protected ComboBox<Norm.SeasonType> seasonComboBox;
-    @FXML protected ComboBox<Norm.ModeType> modeComboBox;
     @FXML protected TextField idleTimeTextField;
     @FXML protected TextField specTimeTextField;
     @FXML protected TextField consumptionRateTextField;
@@ -146,7 +145,6 @@ public class RouteFormController extends AbstractItemController implements Initi
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         seasonComboBox.getItems().addAll(Norm.SeasonType.values());
-        modeComboBox.getItems().addAll(Norm.ModeType.values());
 
 
 
@@ -161,8 +159,8 @@ public class RouteFormController extends AbstractItemController implements Initi
 //        combackFuelTextField.textProperty().addListener(decimalTextFieldChangeListener);
         idleTimeTextField.textProperty().addListener(decimalTextFieldChangeListener);
         specTimeTextField.textProperty().addListener(decimalTextFieldChangeListener);
-        consumptionRateTextField.textProperty().addListener(decimalTextFieldChangeListener);
-        consumptionTextField.textProperty().addListener(decimalTextFieldChangeListener);
+//        consumptionRateTextField.textProperty().addListener(decimalTextFieldChangeListener);
+//        consumptionTextField.textProperty().addListener(decimalTextFieldChangeListener);
 
 
         departureTimeTextField.textProperty().addListener(new TimeTextFieldChangeListener(departureTimeTextField));
@@ -235,7 +233,8 @@ public class RouteFormController extends AbstractItemController implements Initi
             specTimeTextField.setDisable(false);
         }
         specTimeTextField.setText(specTimeString);
-        consumptionRateTextField.setText(routeForm.getConsumptionRate() == null ? "" : routeForm.getConsumptionRate().toString());
+        consumptionRateTextField.setText(routeForm.getConsumptionRate() != null ? routeForm.getConsumptionRate().toString() :
+                routeForm.getAuto().getNorm().getConsumptionRate(routeForm.getSeasonType()).toString());
         consumptionTextField.setText(routeForm.getConsumption() == null ? "" : routeForm.getConsumption().toString());
         Long mileage = null;
         if (routeForm.getDepartureODO()!=null && routeForm.getCombackODO()!=null) {
@@ -247,8 +246,6 @@ public class RouteFormController extends AbstractItemController implements Initi
 //        recalculateFuel();
 //        recalculateTime();
         setGuiListeners();
-        // для автоматического расчета нормы
-        modeComboBox.setValue(routeForm.getModeType());
 
     }
 
@@ -283,14 +280,12 @@ public class RouteFormController extends AbstractItemController implements Initi
         combackODOTextField.textProperty().addListener(invalidationListener);
         combackFuelTextField.textProperty().addListener(invalidationListener);
         seasonComboBox.valueProperty().addListener(invalidationListener);
-        modeComboBox.valueProperty().addListener(invalidationListener);
         idleTimeTextField.textProperty().addListener(invalidationListener);
         specTimeTextField.textProperty().addListener(invalidationListener);
         consumptionRateTextField.textProperty().addListener(invalidationListener);
         consumptionTextField.textProperty().addListener(invalidationListener);
 
         seasonComboBox.valueProperty().addListener(normChangeListener);
-        modeComboBox.valueProperty().addListener(normChangeListener);
 
         departureTimeTextField.textProperty().addListener(recalculateTimeListener);
         combackTimeTextField.textProperty().addListener(recalculateTimeListener);
@@ -326,14 +321,12 @@ public class RouteFormController extends AbstractItemController implements Initi
         combackODOTextField.textProperty().removeListener(invalidationListener);
         combackFuelTextField.textProperty().removeListener(invalidationListener);
         seasonComboBox.valueProperty().removeListener(invalidationListener);
-        modeComboBox.valueProperty().removeListener(invalidationListener);
         idleTimeTextField.textProperty().removeListener(invalidationListener);
         specTimeTextField.textProperty().removeListener(invalidationListener);
         consumptionRateTextField.textProperty().removeListener(invalidationListener);
         consumptionTextField.textProperty().removeListener(invalidationListener);
 
         seasonComboBox.valueProperty().removeListener(normChangeListener);
-        modeComboBox.valueProperty().removeListener(normChangeListener);
 
 
 
@@ -427,7 +420,6 @@ public class RouteFormController extends AbstractItemController implements Initi
 
         routeForm.setCombackFuel(Converter.getDouble(combackFuelTextField.getText()));
         routeForm.setSeasonType(seasonComboBox.getValue());
-        routeForm.setModeType(modeComboBox.getValue());
         routeForm.setIdleTime(Converter.getDouble(idleTimeTextField.getText()));
         if (routeForm.getIdleTime() != null && routeForm.getAuto().getNorm().getIdleConsumptionRate() == null) {
             Dialogs.create()
@@ -523,9 +515,8 @@ public class RouteFormController extends AbstractItemController implements Initi
     private void renorm(){
         Double consumptionRate = null;
         Norm.SeasonType season = seasonComboBox.getValue();
-        Norm.ModeType mode = modeComboBox.getValue();
-        if (season != null && mode != null) {
-            consumptionRate = auto.getNorm().getConsumptionRate(season, mode);
+        if (season != null) {
+            consumptionRate = auto.getNorm().getConsumptionRate(season);
         }
         consumptionRateTextField.setText(consumptionRate==null?"":consumptionRate+"");
     }
