@@ -15,7 +15,7 @@
             <TextField fx:id="passwordTextField" layoutX="121.0" layoutY="91.0" prefHeight="26.0" prefWidth="190.0" AnchorPane.leftAnchor="121.0" />
             <Label layoutX="21.0" layoutY="96.0" text="Пароль" />
             <CheckBox fx:id="activeCheckBox" layoutX="243.0" layoutY="141.0" mnemonicParsing="false" text="Действующий" AnchorPane.leftAnchor="243.0" />
-            <Label layoutX="21.0" layoutY="61.0" text="Цех" />
+            <Label layoutX="21.0" layoutY="61.0" text="Филиал" />
             <TextField fx:id="branchTextField" disable="true" editable="false" layoutX="121.0" layoutY="56.0" prefHeight="26.0" prefWidth="304.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="60.0" />
             <Button layoutX="433.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleSelectBranchButtonAction">
                <graphic>

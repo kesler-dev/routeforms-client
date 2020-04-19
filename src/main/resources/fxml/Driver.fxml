@@ -14,7 +14,7 @@
             <Label layoutX="21.0" layoutY="58.0" text="ФИО сокр" />
             <TextField fx:id="fioShortTextField" layoutX="97.0" layoutY="53.0" prefHeight="26.0" prefWidth="226.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="234.0" />
             <TextField fx:id="branchTextField" disable="true" editable="false" layoutX="97.0" layoutY="131.0" prefHeight="26.0" prefWidth="226.0" />
-            <Label layoutX="21.0" layoutY="136.0" text="Цех" />
+            <Label layoutX="21.0" layoutY="136.0" text="Филиал" />
             <Button layoutX="331.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleSelectBranchButtonAction">
                <graphic>
                   <ImageView>

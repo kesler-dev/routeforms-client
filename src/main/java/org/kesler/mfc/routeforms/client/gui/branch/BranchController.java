@@ -47,7 +47,7 @@ public class BranchController extends AbstractItemController implements Initiali
         this.branch = branch;
         nameTextField.requestFocus();
         Image icon = new Image(this.getClass().getResourceAsStream("/images/office-building.png"));
-        super.showAndWait(owner, "Цех", icon);
+        super.showAndWait(owner, "Филиал", icon);
     }
 
 

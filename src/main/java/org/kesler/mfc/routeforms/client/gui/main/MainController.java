@@ -244,7 +244,7 @@ public class MainController extends AbstractController implements Initializable{
             Dialogs.create()
                     .owner(stage)
                     .title("Внимание")
-                    .message("Для сотрудника не задан цех.")
+                    .message("Для сотрудника не задан филиал.")
                     .showWarning();
             return;
         }
