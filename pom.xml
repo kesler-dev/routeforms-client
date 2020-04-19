@@ -8,11 +8,11 @@
     <name>RouteFormsClient</name>
 
     <packaging>jar</packaging>
-    <version>2.2.1.0</version>
+    <version>2.2.1.1</version>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>MFC</name>
+        <name>kesler.dev</name>
     </organization>
 
     <properties>
@@ -23,8 +23,8 @@
         <log4j.version>1.2.16</log4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <product.title>Учет путевых листов</product.title>
-        <product.company>Алексей Кутырев</product.company>
-        <product.year>2017</product.year>
+        <product.company>kesler.dev@gmail.com</product.company>
+        <product.year>2020</product.year>
     </properties>
 
     <build>
