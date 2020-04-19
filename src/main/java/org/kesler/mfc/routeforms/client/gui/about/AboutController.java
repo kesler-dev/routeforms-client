@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Window;
 import org.kesler.mfc.routeforms.client.Version;
-import org.kesler.util.fx.AbstractController;
+import org.kesler.mfc.routeforms.client.gui.AbstractController;
 
 
 public class AboutController extends AbstractController {
