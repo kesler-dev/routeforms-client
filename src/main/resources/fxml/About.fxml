@@ -20,7 +20,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="64.0" layoutY="174.0" text="(с) Алексей Кутырев" />
+      <Label layoutX="64.0" layoutY="174.0" text="(с) kesler.dev@gmail.com" />
       <Label layoutX="100.0" layoutY="79.0" prefHeight="16.0" prefWidth="59.0" text="Версия:" />
       <Label fx:id="versionLabel" layoutX="159.0" layoutY="79.0">
          <font>
